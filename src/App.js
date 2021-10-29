@@ -8,6 +8,9 @@ import Login from './componets/Login/Login';
 import PrivateRoute from './componets/PrivateRoute/PrivateRoute';
 import OrderdDetails from './componets/OrderdDetails/OrderdDetails';
 import MyOrder from './componets/MyOrders/MyOrder';
+import AddService from './componets/AddService/AddService';
+import NotFound from './componets/NotFound/NotFound';
+import Footer from './componets/Footer/Footer';
 
 
 function App() {
@@ -34,8 +37,15 @@ function App() {
           <PrivateRoute path="/orderdetails">
             <OrderdDetails></OrderdDetails>
           </PrivateRoute>
-        </Switch>
+          <Route path="/addservice">
+            <AddService></AddService>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
 
+        </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );

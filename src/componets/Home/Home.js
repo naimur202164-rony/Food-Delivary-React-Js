@@ -59,7 +59,7 @@ const Home = () => {
 
             </div>
             {/* Part-3 */}
-            <h2 className="text-muted text-center my-5" >OUR FEATURED MENU</h2>
+            <h2 className="text-muted text-center my-5" >OUR FEATURED DELIVARY SERVICES</h2>
             <div className="container">
                 <div className="row">
                     {
