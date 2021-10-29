@@ -23,9 +23,11 @@ const Login = () => {
             })
     }
     return (
-        <div>
-            <h2>This is Login</h2>
-            <button onClick={handleSignIn}>Google Sign</button>
+        <div className="container my-5 ">
+            <h1 className="text-muted text-center"> Login With Your <sapn className="text-info">Google</sapn>  Accounte</h1>
+            <img className="img-fluid  mx-auto d-block my-5" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+            <br />
+            <button className="btn btn-info mx-auto d-block my-5" onClick={handleSignIn}>Google Sign</button>
         </div>
     );
 };

@@ -22,19 +22,18 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/about">
+          <Route path="/about">
             <About></About>
-          </PrivateRoute>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route
-            path="/myorder/:item">
+          <PrivateRoute PrivateRoute path="/myorder/:item">
             <MyOrder></MyOrder>
-          </Route>
-          <Route path="/orderdetails">
+          </PrivateRoute>
+          <PrivateRoute path="/orderdetails">
             <OrderdDetails></OrderdDetails>
-          </Route>
+          </PrivateRoute>
         </Switch>
 
       </Router>

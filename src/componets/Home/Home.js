@@ -2,6 +2,7 @@ import React, { useEffect, useState, useHistory } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css'
+import { signInWithPopup } from 'firebase/auth';
 const Home = () => {
 
     const [foods, setFoods] = useState([]);
@@ -75,7 +76,7 @@ const Home = () => {
                                             <button className="btn btn-success m-2">update</button>
                                         </Link> */}
                                         <Link to={`/myorder/${food._id}`}>
-                                            <button className="btn btn-success m-2">update</button>
+                                            <button className="btn btn-success m-2">Order Now</button>
                                         </Link>
 
                                     </div>
@@ -85,6 +86,65 @@ const Home = () => {
                     }
                 </div>
             </div>
+            {/* part-4 */}
+            <div>
+                <div className="background-img2 ">
+                    <div className="row">
+                        <div className="col-lg-6 col-sm-12"></div>
+                        <div className="col-lg-6 col-sm-12 my-5">
+                            <div>
+                                <h3 className="text-muted text-center my-5">Madang is Awesome!! Delicious meals that are healthy and fresh!</h3>
+                                <p className="text-muted text-center my-5">Madang has fundamentally changed the way my family eat. Previously, dinner meant picking a restaurant on seamless and waiting for food to arrive. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero</p>
+                                <button className="btn btn-info  my-5">Learn more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {/* part-5 */}
+            <div className="container my-5">
+                <div><h2 className="text-muted text-center">OUR PASSIONATE <span className="text-danger">TEAM</span>  MEMBER</h2>
+                    <p className="text-muted text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+                </div>
+                <div className="row">
+                    <div className="col-lg-4 col-sm-12">
+                        <img className="rounded mx-auto d-block" src="http://madang.kenzap.com/wp-content/uploads/2016/11/member1.jpg" />
+                        <h2 className="text-muted text-center">MARINKA <span className="text-danger">SULIS</span></h2>
+                        <p className="text-muted text-center">Founder & CEO</p>
+                    </div>
+                    <div className="col-lg-4 col-sm-12">
+                        <img className="rounded mx-auto d-block" src="http://madang.kenzap.com/wp-content/uploads/2016/11/member2.jpg" />
+                        <h2 className="text-muted text-center">ROY COLEMAN</h2>
+                        <p className="text-muted text-center">Chief</p>
+                    </div>
+                    <div className="col-lg-4 col-sm-12">
+                        <img className="rounded mx-auto d-block" src="http://madang.kenzap.com/wp-content/uploads/2016/11/member3.jpg" />
+                        <h2 className="text-muted text-center">TERESA <span className="text-info">MAYER</span> </h2>
+                        <p className="text-muted text-center">Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+            {/* part-6 */}
+            <div>
+                <div className="row">
+                    <div className="col-lg-6 col-sm-12">
+                        <img className="img-fluid ms-5 ps-5" src="http://madang.kenzap.com/wp-content/uploads/2016/11/mobile-phone-big.png" />
+                    </div>
+                    <div className="col-lg-6 col-sm-12 my-5">
+                        <div>
+                            <h3 className=" text-info ms-2 my-3">Download the app</h3>
+                            <h1 className="text-muted ms-2 my-3">Choose. Eat. Enjoy</h1>
+                            <p className="text-muted ms-2 my-4">Nam liber tempor csoluta nobis eleifnd option congue nihil imperdiet doming iquod mazim placerat facer possim assum lorem ipsum dolor possim assum lorem ipsum dolor.</p>
+                            <div className="mx-2 ms-4 ">
+                                <img className="mx-2" src="http://madang.kenzap.com/wp-content/themes/madang/images/app-store.png" />
+                                <img className="mx-2" src="http://madang.kenzap.com/wp-content/themes/madang/images/google-play.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };
