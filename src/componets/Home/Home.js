@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useHistory } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Home.css'
 const Home = () => {
+
     const [foods, setFoods] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/delivaryfoods')
+        fetch('http://localhost:5000/delivaryfoods/')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, []);
-    console.log(foods)
+
+
 
     return (
         <div>
@@ -68,7 +71,13 @@ const Home = () => {
                                         <h4 class="card-title text-muted">{food.price}$</h4>
 
                                         <p class="card-text">{food.discription.slice(20)}</p>
-                                        <a href="#" class="btn btn-info">Order Now</a>
+                                        {/* <Link to={`/orderdetails/${food._id}`}>
+                                            <button className="btn btn-success m-2">update</button>
+                                        </Link> */}
+                                        <Link to={`/myorder/${food._id}`}>
+                                            <button className="btn btn-success m-2">update</button>
+                                        </Link>
+
                                     </div>
                                 </div>
                             </div>
