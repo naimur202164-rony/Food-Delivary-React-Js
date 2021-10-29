@@ -22,11 +22,13 @@ const Header = () => {
                             <Nav.Link as={Link} to="/myorder">Order</Nav.Link>
                             <Nav.Link as={Link} to="/register">Register</Nav.Link>
                             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
+
                             {
                                 user.email ? <Nav.Link ><button className="btn btn-light" variant="light" onClick={Logout}>LogOut</button></Nav.Link> :
                                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
 
                             }
+                            <Nav.Link>{user.displayName}</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
