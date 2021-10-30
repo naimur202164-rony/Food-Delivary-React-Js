@@ -5,14 +5,14 @@ const OrderdDetails = () => {
     const [orders, setOrders] = useState([]);
     const [isDelete, setIsDelete] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:5000/OrderdDetails')
+        fetch('https://polar-ocean-70274.herokuapp.com/OrderdDetails')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDelete]);
     const handleDeleteProduct = (id) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/deletitems/${id}`, {
+        fetch(`https://polar-ocean-70274.herokuapp.com/deletitems/${id}`, {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
         })

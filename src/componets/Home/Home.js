@@ -2,19 +2,25 @@ import React, { useEffect, useState, useHistory } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css'
-import { signInWithPopup } from 'firebase/auth';
 const Home = () => {
 
     const [foods, setFoods] = useState([]);
-
+    const [items, setItem] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/delivaryfoods/')
+        fetch('https://polar-ocean-70274.herokuapp.com/delivaryfoods/')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, []);
 
+    // Loading Data fro server
+    useEffect(() => {
+        fetch('https://polar-ocean-70274.herokuapp.com/loadedProducts')
+            .then(res => res.json())
+            .then(data => setItem(data))
 
 
+    }, [])
+    console.log(items)
     return (
         <div>
             {/* Part-1 */}
@@ -100,6 +106,32 @@ const Home = () => {
                         </div>
                     </div>
 
+                </div>
+            </div>
+            {/* Part5 */}
+            <div>
+                <div className="container">
+                    <div className="row">{
+
+                        items.map(item =>
+
+                            <div className="col-lg-4 col-sm-12">
+                                <div className="card ms-2  my-4" style={{ width: "18rem" }}>
+
+                                    <div class="card-body m-2">
+                                        <h5 className="card-title">{item.name}</h5>
+                                        <h6 className="card-subtitle mb-2 text-muted"> price{item.price}$</h6>
+                                        <p className="card-text">{item.description}</p>
+                                        <button className="btn btn-info ms-4">Order</button>
+                                        <button className="btn btn-danger ms-4">Parsces</button>
+
+                                        <div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>)
+                    }</div>
                 </div>
             </div>
             {/* part-5 */}

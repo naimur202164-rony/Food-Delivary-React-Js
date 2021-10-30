@@ -10,7 +10,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     const { user } = useFirebase()
     useEffect(() => {
-        fetch(`http://localhost:5000/delivaryfoods`)
+        fetch(`https://polar-ocean-70274.herokuapp.com/delivaryfoods`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -20,7 +20,7 @@ const MyOrder = () => {
     // Posting Data to server
     const handleButton = () => {
         // console.log(data);
-        fetch("http://localhost:5000/addProducts", {
+        fetch("https://polar-ocean-70274.herokuapp.com/addProducts", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(EaxctItem[0]),
